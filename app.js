@@ -6,8 +6,7 @@ var logger = require('morgan');
 var cors = require("cors");
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var dbRouter = require('./routes/db');
+var dbRouter = require('./routes/database/db');
 
 var app = express();
 
@@ -32,7 +31,6 @@ if(process.env.NODE_ENV === 'production') {
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/*', indexRouter);
-app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
