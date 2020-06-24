@@ -1,0 +1,27 @@
+{
+  "name": "friends20",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "server": "nodemon ./bin/www",
+    "react-ui": "npm start --prefix react-ui",
+    "dev": "concurrently \"npm run server\" \"npm run react-ui\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix react-ui && npm run build --prefix react-ui"
+  },
+  "dependencies": {
+    "concurrently": "^5.2.0",
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.1",
+    "pg": "^8.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
